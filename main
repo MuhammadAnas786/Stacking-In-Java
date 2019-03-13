@@ -1,44 +1,50 @@
-/*FA18-BSE-084 A*/
 
-import java.util.ArrayList;
 import java.util.Scanner;
-public class Driver{
-public static ArrayList<City> Cities=new ArrayList<City>();
+public class Driver {
+	
+	private static Scanner scannerObject;
 
-public static Scanner ScannerObject=new Scanner(System.in);
+	public static void main(String args[])
 
-public static void main(String args[]){
+{
 
+Stack StackObject=new Stack();
+scannerObject = new Scanner(System.in);
 
-City City1=new City(ScannerObject.nextLine(),ScannerObject.nextInt(),500,true);
-
-ScannerObject.nextLine();ScannerObject.nextLine();
-
-City City2=new City(ScannerObject.nextLine(),ScannerObject.nextInt(),700,false);
-
-
-Cities.add(City1);
-
-Cities.add(City2);
-
-System.out.println("City with maximum population is"+MaxPopCity());
-
-Cities.remove(0);
-
- }
-
-
-public static City MaxPopCity(){
-	int i=0;
-
-	while(i<Cities.size())
+System.out.println("\n1-Add Element \n 2-remove Element\n 3-Display All\n 4-Exit\n");	
+while((in=scannerObject.nextInt())!=4) 
+{   switch(in)
+  {
+    case 1:
+	System.out.println("\nEnter value to add -1 to Exit\n");
+	int val;
+	while((val=scannerObject.nextInt())!=-1) 
 	{
-		if(Cities.get(i).getPopulation()==City.getmaxPopulation())
-		break;
-		
-		i++;
+	StackObject.push(val);
+	
+	System.out.println("Enter value to add -1 to Exit\n");
 	}
-return Cities.get(i);
+	break;
+	
+    case 2:
+    	StackObject.removeEle();
+	
+	break;
+    
+    case 3:
+	StackObject.pop();
+	break;
+	
+	default:
+		System.out.println("invalid entry");
+	
+   }
+     
+    System.out.println("\n1-Add Element \n 2-remove Element\n 3-Display All\n 4-Exit\n");	
 }
 
-} 
+System.out.println("you exited the programme");
+
+}
+
+}
