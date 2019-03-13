@@ -4,35 +4,33 @@ public class Stack
 {
 
 private  ArrayList<Integer> a;
-
+private int toss;
 	public Stack() {
 		a=new ArrayList<Integer>();
-		
+		toss=-1;
 	}
 	
 	public  void push(int array) {
-	
+	toss++;
 		a.add(array);
 		
 	
 		}
 	
-	public void removeEle(int e) {
-		a.remove(e);
-	
-	}
-	public String toString()
-	{
-	 
-	 return String.format("%d",a);
-	 
+		public void removeEle() {
+		int index=a.size()-1;
+		
+	a.remove(index);
 	}
 
-        public void pop()
-	{
+		public void pop() {
+			while(toss>-1) {
 			
-				System.out.println(a);
+				System.out.println(a.get(toss));
+			this.removeEle();
+			toss--;
 			}
+			System.out.println("Stack is empty");
 		
 	
 	
