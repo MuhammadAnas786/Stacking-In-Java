@@ -21,8 +21,15 @@ private  ArrayList<Integer> a;
 		a.remove(e);
 	
 	}
+	public String toString()
+	{
+	 
+	 return String.format("%d",a);
+	 
+	}
 
-		public void pop() {
+        public void pop()
+	{
 			
 				System.out.println(a);
 			}
